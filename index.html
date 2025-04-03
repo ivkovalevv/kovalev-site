@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" href="./assets/img/logo.gif" />
+    <link rel="stylesheet" href="./styles.css">
+    <title>Разработка сайтов и веб-приложений!</title>
+    <meta
+      data-hid="name::description"
+      name="description"
+      content="Профессиональная разработка сайтов: продающие лендинги, промо-страницы, интернет-магазины и веб-приложения. Создаю сайты, которые привлекают клиентов и увеличивают продажи. Работаю с малым и средним бизнесом."
+    />
+    <meta
+      data-hid="property::og:title"
+      property="og:title"
+      content="Разработка сайтов и веб-приложений!"
+    />
+    <meta
+      data-hid="property::og:description"
+      property="og:description"
+      content="Профессиональная разработка сайтов: продающие лендинги, промо-страницы, интернет-магазины и веб-приложения. Создаю сайты, которые привлекают клиентов и увеличивают продажи. Работаю с малым и средним бизнесом."
+    />
+    <meta data-hid="property::og:type" property="og:type" content="website" />
+    <meta
+      data-hid="property::og:site_name"
+      property="og:site_name"
+      content="kovalevsite.ru"
+    />
+    <meta
+      property="og:title"
+      content="Разработка сайтов и веб-приложений!"
+    />
+    <meta property="og:site_name" content="Разработка сайтов и веб-приложений!" />
+    <meta property="og:url" content="https://kovalevsite.ru/" />
+    <meta
+      property="og:description"
+      content="Профессиональная разработка сайтов: продающие лендинги, промо-страницы, интернет-магазины и веб-приложения. Создаю сайты, которые привлекают клиентов и увеличивают продажи. Работаю с малым и средним бизнесом."
+    />
+    <meta property="og:image" content="./assets/img/previous.png" />
+</head>
+<body>
+<div class="overlay overlay-none"></div>
+
+<!-- MODAL -->
+<div class="modal-container">
+	<div id="modal" class="modal">
+		<div class="modal-header">
+			<div class="modal-close-btn"></div>
+			<h4 class="modal-heading">Оставьте заявку</h4>
+		</div>
+    <p class="modal-description">Я свяжусь с вами в самое ближайшее время!</p>
+    <div class="modal-form-container">
+      <form class="form">
+        <div class="form-group">
+          <label for="modal-name">Имя</label>
+          <input required="" name="modal-name" id="modal-name" placeholder="Иван Ковалёв" minlength="2" type="text">
+          <p class="invalid-message modal-invalid-message-name">Заполните это поле.</p>
+        </div>
+        <div class="form-group">
+          <label for="modal-tel">Номер телефона</label>
+          <input name="modal-tel" id="modal-tel" minlength="20" class="tel" required placeholder="+7 (111) 222-33-44" type="text">
+          <p class="invalid-message modal-invalid-message-tel">Заполните это поле.</p>
+        </div>
+        <div class="form-group">
+          <label for="modal-textarea">Какой будем делать проект?</label>
+          <textarea required="" cols="50" rows="10" id="modal-textarea" name="modal-textarea" placeholder="Например: «Лендинг по готовому макету»"></textarea>
+          <p class="invalid-message modal-invalid-message-project">Заполните это поле.</p>
+        </div>
+        <div class="checkbox-wrapper">
+          <input id="modal-privacy-checkbox" required="" checked name="checkbox" type="checkbox">
+          <label class="terms-label" for="modal-privacy-checkbox">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" class="checkbox-svg">
+              <mask fill="white" id="path-1-inside-1_476_5-37">
+                <rect height="200" width="200"></rect>
+              </mask>
+              <rect mask="url(#path-1-inside-1_476_5-37)" stroke-width="40" class="checkbox-box" height="200" width="200"></rect>
+              <path stroke-width="15" d="M52 111.018L76.9867 136L149 64" class="checkbox-tick"></path>
+            </svg>
+            <span class="label-text">Согласен с <a href="./privacy.html" target="_blank" class="label-text-link">политикой конфиденциальности</a></span>
+            <p class="invalid-message modal-invalid-message-checkbox">Поставьте галочку чтобы продолжить.</p>
+          </label>
+        </div>
+        <button id="modal-order-btn" type="submit" class="form-submit-btn">Оставьть заявку</button>
+      </form>
+    </div>
+	</div>
+
+  <div id="modal-success" class="modal">
+		<div class="modal-header">
+			<div class="modal-close-btn modal-success-close-btn modal-success-close"></div>
+		</div>
+    <img src="./assets/img/success.png" alt="success-image" class="modal-success-image"/>
+    <h4 class="modal-heading modal-success-heading">Заявка отправлена!</h4>
+    <p class="modal-description">Cвяжусь с вами в самое ближайшее время!</p>
+    <button class="btn modal-success-btn modal-success-close">Очень жду!</button>
+	</div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container header-container">
+    <a href="#" class="header__heading-wrapper">
+      <h1 class="header__heading">@kovalev</h1>
+      <img src="./assets/img/logo.gif" class="anim-logo" alt="site"/>
+    </a>
+    <ul id="list" class="header__nav">
+      <li id="projectNavItem" class="header__nav-item">
+        <a href="#section-projects" id="projectLink" class="header__nav-item-link nav-item-link">Проекты</a>
+      </li>
+      <li id="servicesNavItem" class="header__nav-item">
+        <a href="#section-services" id="servicesLink" class="header__nav-item-link nav-item-link">Услуги</a>
+      </li>
+      <li id="stagesNavItem" class="header__nav-item">
+        <a href="#section-stages" id="stagesLink" class="header__nav-item-link nav-item-link">Этапы работ</a>
+      </li>
+      <li id="contactsNavItem" class="header__nav-item">
+        <a href="#section-contacts" id="contactsLink" class="header__nav-item-link nav-item-link">Контакты</a>
+      </li>
+      <div id="line" class="active-line"></div>
+    </ul>
+    <div class="header__block-active">
+      <button class="btn header__nav-item-btn open-modal">Оформить заказ</button>
+    </div> 
+    <button id="burger" class="btn-burger">
+      <svg class="ham hamRotate ham4" viewBox="0 0 95 95" width="65" onclick="this.classList.toggle('active')">
+        <path
+          class="line top"
+          d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+        <path
+          class="line middle"
+          d="m 70,50 h -40" />
+        <path
+          class="line bottom"
+          d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+     </svg> 
+   </button> 
+  </div>
+</header>
+<div class="burger-menu-container">
+    <ul id="burger-menu" class="burger-menu">
+    <li id="burger-projects" class="header__nav-item burger-menu-item">
+      <a href="#section-projects" class="header__nav-item-link">Проекты</a>
+    </li>
+    <li id="burger-services" class="header__nav-item burger-menu-item">
+      <a href="#section-services" class="header__nav-item-link">Услуги</a>
+    </li>
+    <li id="burger-stages" class="header__nav-item burger-menu-item">
+      <a href="#section-stages" class="header__nav-item-link">Этапы работ</a> 
+    </li>
+    <li id="burger-contacts" class="header__nav-item burger-menu-item">
+      <a href="#section-contacts" class="header__nav-item-link">Контакты</a>
+    </li>
+    <div class="burger__block-active">
+      <button class="btn burger__nav-item-btn open-modal">Оформить заказ</button>
+    </div> 
+  </ul>
+  </div>
+
+<!-- HERO -->
+<section class="section section-hero">
+  <div class="container section-hero__container">
+    <div class="section-hero__image"></div>
+    <div class="section-hero__content">
+      <h2 class="heading section-hero__content-heading">Разработка<br></h2>
+      <div class="typing-wrapper">
+      <h2 id="typing-1" class="typing typing-active">сайтов под ключ</h2>
+      <h2 id="typing-2" class="typing typing-text-del">лендингов</h2>
+      <h2 id="typing-3" class="typing typing-text-del">интернет-магазинов</h2>
+      <h2 id="typing-4" class="typing typing-text-del">веб-приложений</h2>
+      </div>
+      <p class="description section-hero__content-heading-description">Создаю эффективные сайты,<br> которые реально работают.</p>
+      <button class="btn section-hero__content-btn open-modal">Рассчитать стоимость</button>
+    </div>
+    <div class="section-hero__heading"></div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section id="section-numbers" class="section section-numbers">
+  <div class="container section-numbers__container">
+    <h1 class="section-heading">~/ цифры</h1>
+
+    <ul class="section-numbers__list">
+      <ul class="section-numbers__item section-numbers__item-1">
+        <div class="section-numbers__item-dot"></div>
+        <div class="section-numbers__item-number-wrapper">
+          <span class="section-numbers__item-number">></span>
+          <h2 class="section-numbers__item-number counter" data-to="3" data-stop="0">0</h2>
+        </div>
+        <p class="section-numbers__item-description description">лет опыта</p>
+      </ul>
+      <ul class="section-numbers__item section-numbers__item-2">
+        <div class="section-numbers__item-dot"></div>
+        <div class="section-numbers__item-number-wrapper">
+          <h2 class="section-numbers__item-number counter" data-to="30" data-stop="0">0</h2>
+          <span class="section-numbers__item-number">+</span>
+        </div>
+        <p class="section-numbers__item-description description">проектов реализовал</p>
+      </ul>
+      <ul class="section-numbers__item section-numbers__item-3">
+        <div class="section-numbers__item-dot"></div>
+        <div class="section-numbers__item-number-wrapper">
+          <h2 class="section-numbers__item-number section-numbers__item-number-custom counter" data-to="100" data-stop="0">0</h2>
+          <span class="section-numbers__item-number section-numbers__item-number-custom">%</span>
+        </div>
+        <p class="section-numbers__item-description description section-numbers__item-description-cutsom">довольных клиентов</p>
+      </ul>
+    </ul>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="section-projects" class="section section-projects section-target">
+  <div class="container">
+    <h1 class="section-heading">~/ последние проекты</h1>
+  </div>
+  <div class="container section-projects__container">
+    <ul class="section-projects__nav-list">
+      <li id="majesticBtn" class="section-projects__nav-item projects__nav-item-active">
+        <img src="./assets/img/svg/MAJESTIC-CAR.svg" alt="majestic-car-button" data-title="MAJESTIC-CAR" class="projects__nav-item"/>
+      </li>
+      <li id="tennisBtn" class="section-projects__nav-item">
+        <img src="./assets/img/svg/TENNIS-OPEN-CLUB.svg" alt="tennis-open-club-button" data-title="TENNIS-OPEN-CLUB" class="projects__nav-item"/>
+      </li>
+      <li id="shopozzBtn" class="section-projects__nav-item">
+        <img src="./assets/img/svg/shopozz.svg" alt="shopozz-button" data-title="shopozz" class="projects__nav-item"/>
+      </li>
+      <li id="masterTaoBtn" class="section-projects__nav-item">
+        <img src="./assets/img/svg/MASTER-TAO.svg" alt="master-tao-button" data-title="MASTER-TAO" class="projects__nav-item"/>
+      </li>
+      <li id="mavrsBtn" class="section-projects__nav-item">
+        <img src="./assets/img/svg/МАВРС.svg" alt="mavrs-button" data-title="МАВРС" class="projects__nav-item"/>
+        </li>
+      <li id="apartDeliveryBtn" class="section-projects__nav-item">
+        <img src="./assets/img/svg/APART-DELIVERY.svg" alt="apart-delivery-button" data-title="APART-DELIVERY" class="projects__nav-item"/>
+      </li>
+    </ul>
+
+    <div class="section-projects__wrapper">
+      <div id="majestic-car-content" class="section-projects__content projects__content-active">
+        <img src="./assets/img/svg/MAJESTIC-CAR.svg" alt="majestic-car-button" data-title="MAJESTIC-CAR" class="projects__nav-item projects__nav-item-mob"/>
+        <video src="./assets/video/majestic-car-video.MP4" class="section-projects__video" autoplay loop muted >
+        </video>
+        <div class="section-projects__heading-wrapper">
+          <p class="section-projects__heading">О проекте:</p>
+          <a href="https://majestic-car.ru" target="_blank" class="section-projects__link">Посетить сайт  
+            <div class="arrow">›</div></a>
+        </div>
+        <p class="section-projects__description">Сайт предлагает профессиональный чип-тюнинг автомобилей в Санкт-Петербурге. <br/>
+          Простой и современный дизайн помогает клиентам быстро познакомиться с услугами и&nbsp;связаться с&nbsp;мастерами.</p>
+      </div>
+      <div id="tennis-open-club-content" class="section-projects__content">
+        <img src="./assets/img/svg/TENNIS-OPEN-CLUB.svg" alt="tennis-open-club-button" data-title="TENNIS-OPEN-CLUB" class="projects__nav-item projects__nav-item-mob"/>
+        <video src="./assets/video/tennis-open-club-video.mp4" class="section-projects__video" autoplay loop muted >
+        </video>
+        <div class="section-projects__heading-wrapper">
+          <p class="section-projects__heading">О проекте:</p>
+          <a href="https://tennisopenclub.ru" target="_blank" class="section-projects__link">Посетить сайт  
+            <div class="arrow">›</div></a>
+        </div>
+        <p class="section-projects__description">Сайт для детской школы тенниса.<br/>
+          Удобная навигация и минималистичный дизайн помогают пользователям легко определиться с выбором.</p>
+        </div>
+        <div id="shopozz-content" class="section-projects__content">
+          <img src="./assets/img/svg/shopozz.svg" alt="shopozz-button" data-title="shopozz" class="projects__nav-item projects__nav-item-mob"/>
+          <video src="./assets/video/shopozz-video.mp4" class="section-projects__video" autoplay loop muted ></video>
+        <div class="section-projects__heading-wrapper">
+          <p class="section-projects__heading">О проекте:</p>
+          <a href="https://shopozz.ru/delivery" target="_blank" class="section-projects__link">Посетить сайт  
+            <div class="arrow">›</div></a>
+        </div>
+        <p class="section-projects__description">Страница доставки для сервиса покупок за рубежом.<br/>
+        Интуитивно понятный интерфейс, адаптивность и доступность обеспечивают хороший пользовательский опыт.</p>
+        </div>
+        <div id="master-tao-content" class="section-projects__content">
+          <img src="./assets/img/svg/MASTER-TAO.svg" alt="master-tao-button" data-title="MASTER-TAO" class="projects__nav-item projects__nav-item-mob"/>
+          <video src="./assets/video/master-tao-video.mp4" class="section-projects__video" autoplay loop muted ></video>
+            <div class="section-projects__heading-wrapper">
+              <p class="section-projects__heading">О проекте:</p>
+              <a href="https://ivkovalevv.github.io/cargo/" target="_blank" class="section-projects__link">Посетить сайт  
+                <div class="arrow">›</div></a>
+            </div>
+            <p class="section-projects__description">Сайт для логистической компании с удобной системой бронирования и современным дизайном, обеспечивающий высокую производительность и удобство пользования.</p>
+          </div>
+          <div id="mavrs-content" class="section-projects__content">
+            <img src="./assets/img/svg/МАВРС.svg" alt="mavrs-button" data-title="МАВРС" class="projects__nav-item projects__nav-item-mob"/>
+            <video src="./assets/video/mavrs-video.mp4" class="section-projects__video" autoplay loop muted ></video>
+            <div class="section-projects__heading-wrapper">
+              <p class="section-projects__heading">О проекте:</p>
+              <a href="https://shopozz.ru/delivery" target="_blank" class="section-projects__link">Посетить сайт  
+                <div class="arrow">›</div></a>
+            </div>
+            <p class="section-projects__description">Страницы с тестированием для оценки состояния пациентов медицинской организации МАВРС. <br/>
+            Функциональность, интуитивная навигация, минималистичный дизайн и чистый код.</p>
+          </div>
+          <div id="apart-delivery-content" class="section-projects__content">
+            <img src="./assets/img/svg/APART-DELIVERY.svg" alt="apart-delivery-button" data-title="APART-DELIVERY" class="projects__nav-item projects__nav-item-mob"/>
+            <video src="./assets/video/apart-delivery-video.mp4" class="section-projects__video" autoplay loop muted ></video>
+            <div class="section-projects__heading-wrapper">
+              <p class="section-projects__heading">О проекте:</p>
+            </div>
+            <p class="section-projects__description">Интернет-магазин Apart-Delivery. (Fullstak разработка)<br/>
+              Магазин с акцентом на удобство навигации и современный дизайн, облегчающий доступ к товарам и услугам.</p>
+          </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- TECH -->
+<section id="section-tech" class="section section-tech">
+  <div class="container section-tech__container">
+    <h1 class="section-heading">~/ технологии и решения</h1>
+  </div>
+<div class="section-tech__box">
+  <div class="marquee">
+    <div class="track-1">
+      <ul id="tech__list-1" class="section-tech__list tech__list-1">
+        <li class="section-tech__item description">Прототипирование</li>
+        <li class="section-tech__item description">Актуальные теги</li>
+        <li class="section-tech__item description">Кроссбраузерность</li>
+        <li class="section-tech__item description">Адаптивность</li>
+        <li class="section-tech__item description">Методология BEM</li>
+        <li class="section-tech__item description">Компактный код</li>
+        <li class="section-tech__item description">Прототипирование</li>
+        <li class="section-tech__item description">Актуальные теги</li>
+        <li class="section-tech__item description">Кроссбраузерность</li>
+        <li class="section-tech__item description">Адаптивность</li>
+        <li class="section-tech__item description">Методология BEM</li>
+        <li class="section-tech__item description">Компактный код</li>
+        <li class="section-tech__item description">Прототипирование</li>
+        <li class="section-tech__item description">Актуальные теги</li>
+        <li class="section-tech__item description">Кроссбраузерность</li>
+      </ul>
+  </div>
+  </div>
+  <div class="marquee">
+    <div class="track-2">
+      <ul id="tech__list-2" class="section-tech__list tech__list-2">
+        <li class="section-tech__item description">JavaScript</li>
+        <li class="section-tech__item description">Node.js</li>
+        <li class="section-tech__item description">TypeScript</li>
+        <li class="section-tech__item description">React.js</li>
+        <li class="section-tech__item description">HTML</li>
+        <li class="section-tech__item description">CSS</li>
+        <li class="section-tech__item description">JavaScript</li>
+        <li class="section-tech__item description">Node.js</li>
+        <li class="section-tech__item description">TypeScript</li>
+        <li class="section-tech__item description">React.js</li>
+        <li class="section-tech__item description">HTML</li>
+        <li class="section-tech__item description">CSS</li>
+        <li class="section-tech__item description">JavaScript</li>
+        <li class="section-tech__item description">Node.js</li>
+        <li class="section-tech__item description">TypeScript</li>
+        <li class="section-tech__item description">React.js</li>
+        <li class="section-tech__item description">HTML</li>
+        <li class="section-tech__item description">CSS</li>
+        <li class="section-tech__item description">JavaScript</li>
+        <li class="section-tech__item description">Node.js</li>
+        <li class="section-tech__item description">TypeScript</li>
+      </ul>
+  </div>
+  </div>
+  <div class="marquee">
+    <div class="track-3">
+      <ul id="tech__list-3" class="section-tech__list tech__list-3">
+        <li class="section-tech__item description">REST API</li>
+        <li class="section-tech__item description">AJAX</li>
+        <li class="section-tech__item description">npm</li>
+        <li class="section-tech__item description">PostgreSQL</li>
+        <li class="section-tech__item description">Git & Github</li>
+        <li class="section-tech__item description">Sass</li>
+        <li class="section-tech__item description">Redux Toolkit</li>
+        <li class="section-tech__item description">REST API</li>
+        <li class="section-tech__item description">AJAX</li>
+        <li class="section-tech__item description">npm</li>
+        <li class="section-tech__item description">PostgreSQL</li>
+        <li class="section-tech__item description">Git & Github</li>
+        <li class="section-tech__item description">Sass</li>
+        <li class="section-tech__item description">Redux Toolkit</li>
+        <li class="section-tech__item description">REST API</li>
+        <li class="section-tech__item description">AJAX</li>
+        <li class="section-tech__item description">npm</li>
+        <li class="section-tech__item description">PostgreSQL</li>
+        <li class="section-tech__item description">Git & Github</li>
+        <li class="section-tech__item description">Sass</li>
+        <li class="section-tech__item description">Redux Toolkit</li>
+      </ul>
+  </div>
+  </div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="section-services" class="section section-services section-target">
+  <div class="container section-services__container">
+    <div class="services-circle">
+    <svg class="circle" viewBox="0 0 100 100">
+  <path id="circle" d="M 0,50 a 50,50 0 1,1 0,1 z" />
+  <text>
+    <textPath xlink:href="#circle">
+      качество ~ работа на результат ~ 100% гарантия ~  
+    </textPath>
+  </text>
+</svg>
+  </div>
+    <h1 class="section-heading">~/ услуги</h1>
+  </div>
+  <div class="container section-services__container section-services__container-mobile">
+    <ul class="section-services__nav-list">
+      <div id="servicesLine" class="services__nav-active-line"></div>
+      <li id="services-dev" class="description section-services__nav-item section-services__nav-item-active">Разработка сайтов</li>
+      <li id="services-dev-app" class="description section-services__nav-item">
+        Разработка веб-приложений
+      </li>
+      <li id="services-layout" class="description section-services__nav-item">
+        Верстка сайтов
+      </li>
+    </ul>
+    <ul id="services-dev-list" class="section-services__list section-services__list-dev">
+      <div class="services__star star-1"></div>
+      <li class="section-services__item content-item-dev">
+	<div class="services__item-content">
+	        <p class="description services__item-heading">Лендинг или промо-страница</p>
+        	<p class="description services__item-price">от 15 000 ₽</p>
+	</div>
+        <button class="btn services__item-btn open-modal">Оставить заявку
+        </button>
+        <button class="btn services__item-btn-mob open-modal">
+          <img src="./assets/img/next.png" class="services__item-btn-mob-icon"/>
+        </button>
+      </li>
+      <li class="section-services__item content-item-dev">
+	<div class="services__item-content">        
+		<p class="description services__item-heading">Информационный сайт</p>
+        	<p class="description services__item-price">от 25 000 ₽</p>
+	</div>
+        <button class="btn services__item-btn open-modal">Оставить заявку</button>
+        <button class="btn services__item-btn-mob open-modal">
+          <img src="./assets/img/next.png" class="services__item-btn-mob-icon"/>
+        </button>
+      </li>
+      <li class="section-services__item content-item-dev">
+	<div class="services__item-content">
+	        <p class="description services__item-heading">Корпоративный сайт</p>
+        	<p class="description services__item-price">от 30 000 ₽</p>
+	</div>
+        <button class="btn services__item-btn open-modal">Оставить заявку</button>
+        <button class="btn services__item-btn-mob open-modal">
+          <img src="./assets/img/next.png" class="services__item-btn-mob-icon"/>
+        </button>
+      </li>
+      <li class="section-services__item content-item-dev">
+	<div class="services__item-content">
+	        <p class="description services__item-heading">Интернет-магазин</p>
+        	<p class="description services__item-price">от 50 000 ₽</p>
+	</div>
+        <button class="btn services__item-btn open-modal">Оставить заявку</button>
+        <button class="btn services__item-btn-mob open-modal">
+          <img src="./assets/img/next.png" class="services__item-btn-mob-icon"/>
+        </button>
+      </li>
+    </ul>
+    <ul id="services-dev-app-list" class="section-services__list section-services__list-dev-app section-services__list-none">
+      <div class="services__star star-2"></div>
+      <li class="section-services__item content-item-dev-app">
+	<div class="services__item-content">
+	        <p class="description services__item-heading">Простое приложение</p>
+        	<p class="description services__item-price">от 10 000 ₽</p>
+	</div>
+        <button class="btn services__item-btn open-modal">Оставить заявку</button>
+        <button class="btn services__item-btn-mob open-modal">
+          <img src="./assets/img/next.png" class="services__item-btn-mob-icon"/>
+        </button>
+      </li>
+      <li class="section-services__item content-item-dev-app">
+	<div class="services__item-content">
+	        <p class="description services__item-heading">Среднее приложение</p>
+        	<p class="description services__item-price">от 50 000 ₽</p>
+	</div>
+        <button class="btn services__item-btn open-modal">Оставить заявку</button>
+        <button class="btn services__item-btn-mob open-modal">
+          <img src="./assets/img/next.png" class="services__item-btn-mob-icon"/>
+        </button>
+      </li>
+      <li class="section-services__item content-item-dev-app">
+	<div class="services__item-content">
+		<p class="description services__item-heading">Сложное приложение</p>
+        	<p class="description services__item-price">от 100 000 ₽</p>
+	</div>
+        <button class="btn services__item-btn open-modal">Оставить заявку</button>
+        <button class="btn services__item-btn-mob open-modal">
+          <img src="./assets/img/next.png" class="services__item-btn-mob-icon"/>
+        </button>
+      </li>
+    </ul>
+    <ul id="services-layout-list" class="section-services__list section-services__list-layout section-services__list-none">
+      <div class="services__star star-3"></div>
+      <li class="section-services__item content-item-layout">
+	<div class="services__item-content">
+	        <p class="description services__item-heading">Лендинг или промо-страница</p>
+        	<p class="description services__item-price">от 5 000 ₽</p>
+	</div>
+        <button class="btn services__item-btn open-modal">Оставить заявку</button>
+        <button class="btn services__item-btn-mob open-modal">
+          <img src="./assets/img/next.png" class="services__item-btn-mob-icon"/>
+        </button>
+      </li>
+      <li class="section-services__item content-item-layout">
+	<div class="services__item-content">
+	        <p class="description services__item-heading">Информационный сайт</p>
+        	<p class="description services__item-price">от 10 000 ₽</p>
+	</div>
+        <button class="btn services__item-btn open-modal">Оставить заявку</button>
+        <button class="btn services__item-btn-mob open-modal">
+          <img src="./assets/img/next.png" class="services__item-btn-mob-icon"/>
+        </button>
+      </li>
+      <li class="section-services__item content-item-layout">
+	<div class="services__item-content">
+	        <p class="description services__item-heading">Корпоративный сайт</p>
+        	<p class="description services__item-price">от 20 000 ₽</p>
+	</div>
+        <button class="btn services__item-btn open-modal">Оставить заявку</button>
+        <button class="btn services__item-btn-mob open-modal">
+          <img src="./assets/img/next.png" class="services__item-btn-mob-icon"/>
+        </button>
+      </li>
+      <li class="section-services__item content-item-dev">
+	<div class="services__item-content">
+	        <p class="description services__item-heading">Интернет-магазин</p>
+        	<p class="description services__item-price">от 30 000 ₽</p>
+	</div>
+        <button class="btn services__item-btn open-modal">Оставить заявку</button>
+        <button class="btn services__item-btn-mob open-modal">
+          <img src="./assets/img/next.png" class="services__item-btn-mob-icon"/>
+        </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- STAGES -->
+<section id="section-stages" class="section section-stages section-target">
+  <div class="container section-stages__container">
+    <h1 class="section-heading">~/ этапы работ</h1>
+  </div>
+  <div class="container section-stages__container stages__container-line">
+    <div class="section-stages__wrapper-line">
+      <div class="section-stages__line section-stages__line-1">
+        <div data-target="section-stages__dot-1" class="section-stages__dot section-stages__dot-1"></div>
+      </div>
+      <div class="section-stages__line section-stages__line-2">
+        <div data-target="section-stages__dot-2" class="section-stages__dot section-stages__dot-2"></div>
+      </div>
+      <div class="section-stages__line section-stages__line-3">
+        <div data-target="section-stages__dot-3" class="section-stages__dot section-stages__dot-3"></div>
+      </div>
+      <div class="section-stages__line section-stages__line-4">
+        <div data-target="section-stages__dot-4" class="section-stages__dot section-stages__dot-4"></div>
+      </div>
+      <div class="section-stages__line section-stages__line-5">
+        <div data-target="section-stages__dot-5" class="section-stages__dot section-stages__dot-5"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container section-stages__container">
+    <ul class="section-stages__list">
+      <li id="section-stages__dot-1" class="section-stages__stage section-stages__stage-1">
+        <h1 data-heading="section-stages__dot-1" class="heading section-stages__stage-heading stage-heading-1">
+          <span data-num="section-stages__dot-1" class="section-stages__stage-heading-num">1</span>
+          Брифинг и ТЗ</h1>
+        <p class="description section-stages__stage-description stage-description-1">
+          Получим детальное описание проекта, определим цели и основные требования. На основе этой информации составим техническое задание, которое будет служить основой для всех последующих этапов разработки.
+        </p>
+      </li>
+      <li id="section-stages__dot-2" class="section-stages__stage section-stages__stage-2">
+        <h1 data-heading="section-stages__dot-2" class="heading section-stages__stage-heading stage-heading-2">
+          <span data-num="section-stages__dot-2" class="section-stages__stage-heading-num">2</span>
+          Прототипирование</h1>
+        <p class="description section-stages__stage-description stage-description-2">
+          Выявим главные блоки сайта и их взаимосвязь. Это поможет лучше понять, как будет работать конечный продукт, а также внести необходимые коррективы на ранней стадии разработки.
+        </p>
+      </li>
+      <li id="section-stages__dot-3" class="section-stages__stage section-stages__stage-3">
+        <h1 data-heading="section-stages__dot-3" class="heading section-stages__stage-heading stage-heading-3">
+          <span data-num="section-stages__dot-3" class="section-stages__stage-heading-num">3</span>
+          Визуализация</h1>
+        <p class="description section-stages__stage-description stage-description-3">
+          Определим визуальную концепцию, цветовую палитру, типографику и стиль. Визуализируем основные блоки, обеспечивая соответствие вашим требованиям.
+        </p>
+      </li>
+      <li id="section-stages__dot-4" class="section-stages__stage section-stages__stage-4">
+        <h1 data-heading="section-stages__dot-4" class="heading section-stages__stage-heading stage-heading-4">
+          <span data-num="section-stages__dot-4" class="section-stages__stage-heading-num">4</span>
+          Верстка и разработка</h1>
+        <p class="description section-stages__stage-description stage-description-4">
+          Напишем код для создания адаптивного и функционального интерфейса. Оптимизируем его для различных устройств и браузеров. Настроим все необходимые плагины и интеграции для корректной работы всех функций сайта.
+        </p>
+      </li>
+      <li id="section-stages__dot-5" class="section-stages__stage section-stages__stage-5">
+        <h1 data-heading="section-stages__dot-5" class="heading section-stages__stage-heading stage-heading-5">
+          <span data-num="section-stages__dot-5" class="section-stages__stage-heading-num">5</span>
+          Тестирование и запуск</h1>
+        <p class="description section-stages__stage-description stage-description-5">
+          Проведем всестороннее тестирование функционала, чтобы выявить и исправить все возможные недочеты. После успешного тестирования запустим проект.
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="section-order" class="section section-order">
+  <div class="container section-order__container">
+    <div class="section-order__content">
+      <h1 class="section-order__heading">Cоздам ваш <span class="section-order__heading-special">идеальный</span> сайт</h1>
+      <p class="section-order__description">Оставьте заявку, и я свяжусь с вами в самое ближайшее время.</p>
+      <div class="section-order__card-wrapper">
+        <div class="section-order__card-text">
+          <p class="section-order__card-title">Иван Ковалёв</p>
+          <p class="section-order__card-description">Отвечу на все ваши вопросы, проконсультирую и&nbsp;сориентирую по ценам!</p>
+        </div>  
+        <video src="./assets/video/emodji.mp4" autoplay loop muted class="section-order__emoji"></video>
+        <video src="./assets/video/emodji-mob.mp4" autoplay loop muted class="section-order__emoji-mob"></video> 
+      </div>
+    </div>
+    <div class="form-container">
+      <form class="form">
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input required="" name="name" id="name" placeholder="Иван Ковалёв" minlength="2" type="text">
+          <p class="invalid-message invalid-message-name">Заполните это поле.</p>
+        </div>
+        <div class="form-group">
+          <label for="tel">Номер телефона</label>
+          <input name="tel" id="tel" minlength="20" class="tel" required placeholder="+7 (111) 222-33-44" type="text">
+          <p class="invalid-message invalid-message-tel">Заполните это поле.</p>
+        </div>
+        <div class="form-group">
+          <label for="textarea">Какой будем делать проект?</label>
+          <textarea required="" cols="50" rows="10" id="textarea" name="textarea" placeholder="Например: «Лендинг по готовому макету»"></textarea>
+          <p class="invalid-message invalid-message-project">Заполните это поле.</p>
+        </div>
+        <div class="checkbox-wrapper">
+          <input id="privacy-checkbox" required="" checked name="checkbox" type="checkbox">
+          <label class="terms-label" for="privacy-checkbox">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" class="checkbox-svg">
+              <mask fill="white" id="path-1-inside-1_476_5-37">
+                <rect height="200" width="200"></rect>
+              </mask>
+              <rect mask="url(#path-1-inside-1_476_5-37)" stroke-width="40" class="checkbox-box" height="200" width="200"></rect>
+              <path stroke-width="15" d="M52 111.018L76.9867 136L149 64" class="checkbox-tick"></path>
+            </svg>
+            <span class="label-text">Согласен с <a href="./privacy.html" target="_blank" class="label-text-link">политикой конфиденциальности</a></span>
+            <p class="invalid-message invalid-message-checkbox">Поставьте галочку чтобы продолжить.</p>
+          </label>
+        </div>
+        <button id="order-btn" type="submit" class="form-submit-btn">Оставьть заявку</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="section-faq" class="section section-faq">
+  <div class="container section-faq__container">
+    <h3 class="faq__heading">
+      FAQ
+    </h3>
+    <div class="faq__questions">
+      <details name="faq-process" class="faq-details">
+        <summary class="section-process-summary">
+          <div class="accordion__title-block" role="term" aria-details="faq-process-1">
+            <p class="title accordion__title">Сколько времени займет создание сайта?</p>
+            <button class="accordion__title-button"></button>
+          </div>
+        </summary>
+      </details>
+      <div class="accordion__content" id="faq-process-1" role="definition">
+        <div class="accordion__content-body">
+          <p class="description section-process-summary">
+            Сроки зависят от сложности проекта, но в среднем создание сайта занимает от 2 до 6 недель. Я работаю поэтапно, чтобы вы могли видеть прогресс и вносить правки на каждом шаге. Например, лендинг можно сделать за 1-2 недели, а интернет-магазин — за 4-6 недель. Главное — качество, которое привлечет ваших клиентов!
+          </p>
+        </div>
+      </div>
+        
+      <details name="faq-process" class="faq-details">
+        <summary class="section-process-summary">
+          <div class="accordion__title-block" role="term" aria-details="faq-process2">
+            <p class="title accordion__title">Сколько стоит создание сайта?</p>
+            <button class="accordion__title-button"></button>
+          </div>
+        </summary>
+      </details>
+      <div class="accordion__content" id="faq-process-2" role="definition">
+        <div class="accordion__content-body">
+          <p class="description section-process-summary">
+            Стоимость зависит от ваших задач: лендинг обойдется в среднем от 15 000 до 30 000 рублей, а интернет-магазин — от 50 000 рублей и выше. Я предлагаю гибкие тарифы и индивидуальный подход, чтобы вы получили сайт, который окупит себя в кратчайшие сроки. Давайте обсудим ваш проект, и я подготовлю точный расчет!
+          </p>
+        </div>
+      </div>
+      
+      <details name="faq-process" class="faq-details">
+        <summary class="section-process-summary">
+          <div class="accordion__title-block" role="term" aria-details="faq-process-3">
+            <p class="title accordion__title">Вы делаете сайты под ключ?</p>
+            <button class="accordion__title-button"></button>
+          </div>
+        </summary>
+      </details>
+      <div class="accordion__content" id="faq-process-3" role="definition">
+        <div class="accordion__content-body">
+          <p class="description section-process-summary">
+            Да, я занимаюсь полным циклом создания сайта: от разработки дизайна и верстки до настройки хостинга, домена и базовой SEO-оптимизации. Вы получите готовый продукт, который сразу начнет работать на ваш бизнес. Моя цель — сэкономить ваше время и сделать процесс максимально комфортным.
+          </p>
+        </div>
+      </div>
+      
+      <details name="faq-process" class="faq-details">
+        <summary class="section-process-summary">
+          <div class="accordion__title-block" role="term" aria-details="faq-process-4">
+            <p class="title accordion__title">Какой функционал можно добавить на сайт?</p>
+            <button class="accordion__title-button"></button>
+          </div>
+        </summary>
+      </details>
+      <div class="accordion__content" id="faq-process-4" role="definition">
+        <div class="accordion__content-body">
+          <p class="description section-process-summary">
+            Мы обсудим ваши потребности, и я предложу оптимальные решения, которые помогут увеличить конверсию и упростят взаимодействие с клиентами.
+          </p>
+        </div>
+      </div>
+      
+      <details name="faq-process" class="faq-details">
+        <summary class="section-process-summary">
+          <div class="accordion__title-block" role="term" aria-details="faq-process-5">
+            <p class="title accordion__title">Вы делаете адаптивные сайты?</p>
+            <button class="accordion__title-button"></button>
+          </div>
+        </summary>
+      </details>
+      <div class="accordion__content" id="faq-process-5" role="definition">
+        <div class="accordion__content-body">
+          <p class="description section-process-summary">
+            Конечно! Все сайты, которые я создаю, полностью адаптивны и корректно отображаются на любых устройствах: смартфонах, планшетах и компьютерах. Это важно, ведь более 60% пользователей заходят на сайты с мобильных устройств. Ваш сайт будет удобен для всех посетителей, что повысит доверие к вашему бренду.
+          </p>
+        </div>
+      </div>
+      
+      <details name="faq-process" class="faq-details">
+        <summary class="section-process-summary">
+          <div class="accordion__title-block" role="term" aria-details="faq-process-6">
+            <p class="title accordion__title">Какие гарантии вы предоставляете?</p>
+            <button class="accordion__title-button"></button>
+          </div>
+        </summary>
+      </details>
+      <div class="accordion__content" id="faq-process-6" role="definition">
+        <div class="accordion__content-body">
+          <p class="description section-process-summary">
+            Я гарантирую качественную реализацию вашего проекта в оговоренные сроки. После сдачи сайта я всегда остаюсь на связи, чтобы устранить возможные недочеты и убедиться, что все работает идеально. Моя цель — сделать так, чтобы вы остались довольны результатом и могли рекомендовать меня своим партнерам.
+          </p>
+        </div>
+      </div>
+
+      <details name="faq-process" class="faq-details">
+        <summary class="section-process-summary">
+          <div class="accordion__title-block" role="term" aria-details="faq-process-7">
+            <p class="title accordion__title">Что входит в стоимость создания сайта?</p>
+            <button class="accordion__title-button"></button>
+          </div>
+        </summary>
+      </details>
+      <div class="accordion__content" id="faq-process-7" role="definition">
+        <div class="accordion__content-body">
+          <p class="description section-process-summary">
+            В стоимость входит полный цикл работ: анализ ваших задач, разработка дизайна, верстка, программирование, тестирование и базовая настройка сайта для запуска. Если у вас есть дополнительные пожелания, мы обсудим их отдельно и включим в проект только то, что действительно нужно вашему бизнесу.
+          </p>
+        </div>
+      </div>
+
+      <details name="faq-process" class="faq-details">
+        <summary class="section-process-summary">
+          <div class="accordion__title-block" role="term" aria-details="faq-process-8">
+            <p class="title accordion__title">Что делать, если мне не понравится дизайн?</p>
+            <button class="accordion__title-button"></button>
+          </div>
+        </summary>
+      </details>
+      <div class="accordion__content" id="faq-process-8" role="definition">
+        <div class="accordion__content-body">
+          <p class="description section-process-summary">
+            Я всегда начинаю с подробного обсуждения ваших пожеланий и создания прототипа, который вы сможете оценить до начала разработки. Если что-то не понравится, мы внесем правки на этапе дизайна. Моя цель — сделать сайт, который будет полностью соответствовать вашим ожиданиям и целям бизнеса. Ваше удовлетворение — мой приоритет!
+          </p>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section id="section-contacts" class="section section-contacts section-target">
+  <div class="container">
+    <h1 class="section-heading">~/ контакты</h1>
+  </div>
+  <div class="container section-contacts__container">
+    <div class="section-contacts__text-wrapper">
+      <div class="contacts-content">
+        <div class="contacts-content__container">
+          <p class="contacts-content__container__text">
+            Обсудим
+          </p>
+        
+          <ul class="contacts-content__container__list">
+            <li class="contacts-content__container__list__item">проект?</li>
+            <li class="contacts-content__container__list__item">сайт?</li>
+            <li class="contacts-content__container__list__item">работу?</li>
+            <li class="contacts-content__container__list__item">задачу?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <ul class="section-contacts__list">
+      <div class="package">
+        <a href="https://t.me/x_kovalev" target="_blank" class="section-contacts__item contacts__item-tg">
+          <div class="contacts__item-icon"></div>
+          <p class="contacts__item-description">telegram</p>
+          </a>
+      </div>
+      <div class="package">
+        <a href="https://vk.com/x.kovalev" target="_blank" class="section-contacts__item contacts__item-vk">
+          <div class="contacts__item-icon"></div>
+          <p class="contacts__item-description">vk</p>
+        </a>
+      </div>
+      <div class="package">
+        <a href="https://wa.me/79151049060" target="_blank" class="section-contacts__item contacts__item-wa">
+          <div class="contacts__item-icon"></div>
+          <p class="contacts__item-description">whatsapp</p>
+        </a>
+      </div>
+      <li class="contacts__item-contacts">
+        <a href="malito:ivkovalevv@gmail.com" class="section-contacts__item contacts__item-mail">
+          <div class="contacts__item-icon"></div>
+          <p class="contacts__item-description">ivkovalevv@gmail</p>
+        </a>
+          <div class="contacts__item-button-wrapper">
+            <button class="contacts__item-button open-modal">
+              <p class="shine">Напишите мне</p>
+            </button>
+          </div>
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer__container">
+    <div class="footer__column">
+      <a href="#" class="footer__heading footer__special-heading">@kovalev</a>
+      <ul class="footer__nav-list">
+        <li class="footer__nav-wrapper">
+          <a href="#section-numbers" class="footer__link">Цифры</a>
+          <a href="#section-projects" class="footer__link">Проекты</a>
+          <a href="#section-tech" class="footer__link">Технологии</a>
+          <a href="#section-services" class="footer__link">Услуги</a>
+        </li>
+        <li class="footer__nav-wrapper">
+          <a href="#section-stages" class="footer__link">Этапы работ</a>
+          <a href="#section-faq" class="footer__link">Вопросы</a>
+          <a href="#section-contacts" class="footer__link">Контакты</a>
+          <a href="#section-order" class="footer__link">Оформить заказ</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer__column footer__column-flex">
+      <a href="https://t.me/x_kovalev" class="qr-link">
+        <img src="./assets/img/qr.png" alt="qr-code" class="footer__qr"/>
+      </a>
+      <div class="footer__column-wrapper">
+        <a href="tel:79151049060" class="footer__link">+79151049060</a>
+        <a href="malito:ivkovalevv@gmail.com" class="footer__link">ivkovalevv@gmail.com</a>
+        <p class="footer__link-description">с 9:00-20:00 - ежедневно (МСК)</p>
+        <button class="btn footer__btn open-modal">Заказать звонок</button>
+        <ul class="footer__social-list">
+          <a href="https://t.me/x_kovalev" alt="tg" class="footer__social-link">
+            <img src="./assets/img/tg.png" alt="tg" class="footer__social-icon"/>
+          </a>
+          <a href="https://vk.com/x.kovalev" alt="vk" class="footer__social-link">
+            <img src="./assets/img/vk.png" alt="tg" class="footer__social-icon"/>
+          </a>
+          <a href="https://wa.me/79151049060" alt="wa" class="footer__social-link">
+            <img src="./assets/img/wa.png" alt="tg" class="footer__social-icon"/>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container footer__line-container">
+    <p class="footer__signature">
+      Created by <a href="https://github.com/ivkovalevv" class="footer__signature footer__special-signature">Ivkovalevv</a> © 2025
+    </p>
+    <a href="./privacy.html" target="_blank" class="footer__signature footer__signature-link">Политика конфиденциальности</a>
+  </div>
+</footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script defer src="./js/main.js" type="text/javascript"></script>
+  <script defer src="./js/message.js" type="text/javascript"></script>
+</body>
