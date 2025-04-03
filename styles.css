@@ -27,7 +27,7 @@ body {
 .overlay {
   width: 100%;
   height: 1000%;
-  position: fixed;
+  position: absolute;
   z-index: 5;
   background-color: #0000008b;
   backdrop-filter: blur(13.3px);
@@ -76,14 +76,14 @@ li {
 }
 
 .section-heading {
-  color: #cacaca;
+  color: #ffffffd8;
   text-align: start;
   margin-top: clamp(0rem, -0.9929rem + 4.9645vw, 4.375rem);
-  font-family: "Podkova", serif;
   font-size: clamp(1.875rem, 1.4495rem + 2.1277vw, 3.75rem);
   font-optical-sizing: auto;
-  font-weight: 200;
+  font-weight: 400;
   font-style: normal;
+  letter-spacing: -1.5px;
 }
 
 .btn {
@@ -2666,6 +2666,17 @@ html {
   }
 }
 
+@media (max-width: 425px) {
+  .section-order__container {
+    width: 100%;
+  }
+  .section-order__content {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* TECH */
 
 .section-tech__box {
@@ -2854,7 +2865,7 @@ summary {
 
 .section-process-summary {
   font-weight: 500;
-  font-size: clamp(0.875rem, 0.7245rem + 0.6173vw, 1.1875rem);
+  font-size: clamp(0.9375rem, 0.8949rem + 0.2128vw, 1.125rem);
   line-height: clamp(1.1875rem, 0.9167rem + 1.1111vw, 1.75rem);
   letter-spacing: -2.3%;
   color: rgb(43, 43, 43);
@@ -2971,7 +2982,7 @@ details summary::-webkit-details-marker {
   display: block;
   position: sticky;
   overflow: hidden;
-  font-size: clamp(1.5rem, 1.344rem + 0.7801vw, 2.1875rem);
+  font-size: clamp(1.625rem, 1.4973rem + 0.6383vw, 2.1875rem);
   line-height: 40px;
   color: #fff;
 }
@@ -3124,7 +3135,7 @@ details summary::-webkit-details-marker {
 .contacts__item-button {
   width: 100%;
   height: 100%;
-  font-size: clamp(0.875rem, 0.7245rem + 0.6173vw, 1.1875rem);
+  font-size: clamp(1rem, 0.9574rem + 0.2128vw, 1.1875rem);
   font-weight: 800;
   color: rgba(255, 255, 255, 0.3);
   background-color: #27282c;
@@ -3206,7 +3217,7 @@ details summary::-webkit-details-marker {
 .contacts__item-description {
   width: 100%;
   text-align: left;
-  font-size: clamp(0.875rem, 0.7245rem + 0.6173vw, 1.1875rem);
+  font-size: clamp(1rem, 0.9574rem + 0.2128vw, 1.1875rem);
   font-weight: 800;
   color: rgba(255, 255, 255, 0.3);
   transition: color 0.3s ease;
@@ -3323,7 +3334,7 @@ details summary::-webkit-details-marker {
 
 .footer__special-heading {
   width: fit-content;
-  font-size: clamp(1.25rem, 1.1365rem + 0.5674vw, 1.75rem);
+  font-size: clamp(1.375rem, 1.2899rem + 0.4255vw, 1.75rem);
   background: -webkit-linear-gradient(
     left,
     rgb(218, 210, 245),
@@ -3348,7 +3359,7 @@ details summary::-webkit-details-marker {
 .footer__link {
   width: fit-content;
   color: #cacaca;
-  font-size: clamp(0.875rem, 0.7245rem + 0.6173vw, 1.1875rem);
+  font-size: clamp(1rem, 0.9574rem + 0.2128vw, 1.1875rem);
   font-weight: 400;
   margin-bottom: clamp(0.3125rem, 0.2416rem + 0.3546vw, 0.625rem);
   background-color: transparent;
@@ -3478,12 +3489,12 @@ details summary::-webkit-details-marker {
   .footer__column-flex {
     justify-content: center;
   }
-  .footer__column-flex {
-    flex-direction: column;
-  }
   .footer__qr {
-    width: 100%;
-    margin: 10px auto;
+    width: 90%;
+    margin: 0px auto;
+  }
+  .footer__social-list {
+    margin-top: 20px;
   }
   .qr-link {
     width: 60%;
