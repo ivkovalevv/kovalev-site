@@ -1372,6 +1372,15 @@ html {
   }
 }
 
+@media (max-width: 425px){
+  .section-projects__video-desk{
+    display: none;
+  }
+  .section-projects__video-mob{
+    display: inline-block;
+  }
+}
+
 /* SECTION-SERVICES */
 
 .section-services__container {
