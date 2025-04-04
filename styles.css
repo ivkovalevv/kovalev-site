@@ -1253,6 +1253,10 @@ html {
   aspect-ratio: 1 / 0.6;
 }
 
+.section-projects__video-mob{
+  display: none;
+}
+
 .section-projects__heading-wrapper {
   display: flex;
   align-items: center;
@@ -1372,11 +1376,11 @@ html {
   }
 }
 
-@media (max-width: 425px){
-  .section-projects__video-desk{
+@media (max-width: 425px) {
+  .section-projects__video-desk {
     display: none;
   }
-  .section-projects__video-mob{
+  .section-projects__video-mob {
     display: inline-block;
   }
 }
