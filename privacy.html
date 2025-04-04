@@ -18,6 +18,132 @@
   <body>
     <div class="overlay overlay-none"></div>
 
+    <!-- MODAL -->
+    <div class="modal-container">
+      <div id="modal" class="modal">
+        <div class="modal-header">
+          <div class="modal-close-btn"></div>
+          <h4 class="modal-heading">Оставьте заявку</h4>
+        </div>
+        <p class="modal-description">
+          Я свяжусь с вами в самое ближайшее время!
+        </p>
+        <div class="modal-form-container">
+          <form class="form">
+            <div class="form-group">
+              <label for="modal-name">Имя</label>
+              <input
+                required=""
+                name="modal-name"
+                id="modal-name"
+                placeholder="Иван Ковалёв"
+                minlength="2"
+                type="text"
+              />
+              <p class="invalid-message modal-invalid-message-name">
+                Заполните это поле.
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="modal-tel">Номер телефона</label>
+              <input
+                name="modal-tel"
+                id="modal-tel"
+                minlength="20"
+                class="tel"
+                required
+                placeholder="+7 (111) 222-33-44"
+                type="text"
+              />
+              <p class="invalid-message modal-invalid-message-tel">
+                Заполните это поле.
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="modal-textarea">Какой будем делать проект?</label>
+              <textarea
+                required=""
+                cols="50"
+                rows="10"
+                id="modal-textarea"
+                name="modal-textarea"
+                placeholder="Например: «Лендинг по готовому макету»"
+              ></textarea>
+              <p class="invalid-message modal-invalid-message-project">
+                Заполните это поле.
+              </p>
+            </div>
+            <div class="checkbox-wrapper">
+              <input
+                id="modal-privacy-checkbox"
+                required=""
+                checked
+                name="checkbox"
+                type="checkbox"
+              />
+              <label class="terms-label" for="modal-privacy-checkbox">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 200 200"
+                  class="checkbox-svg"
+                >
+                  <mask fill="white" id="path-1-inside-1_476_5-37">
+                    <rect height="200" width="200"></rect>
+                  </mask>
+                  <rect
+                    mask="url(#path-1-inside-1_476_5-37)"
+                    stroke-width="40"
+                    class="checkbox-box"
+                    height="200"
+                    width="200"
+                  ></rect>
+                  <path
+                    stroke-width="15"
+                    d="M52 111.018L76.9867 136L149 64"
+                    class="checkbox-tick"
+                  ></path>
+                </svg>
+                <span class="label-text"
+                  >Согласен с
+                  <a
+                    href="./privacy.html"
+                    target="_blank"
+                    class="label-text-link"
+                    >политикой конфиденциальности</a
+                  ></span
+                >
+                <p class="invalid-message modal-invalid-message-checkbox">
+                  Поставьте галочку чтобы продолжить.
+                </p>
+              </label>
+            </div>
+            <button id="modal-order-btn" type="submit" class="form-submit-btn">
+              Оставьть заявку
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div id="modal-success" class="modal">
+        <div class="modal-header">
+          <div
+            class="modal-close-btn modal-success-close-btn modal-success-close"
+          ></div>
+        </div>
+        <img
+          src="./assets/img/success.png"
+          alt="success-image"
+          class="modal-success-image"
+        />
+        <h4 class="modal-heading modal-success-heading">Заявка отправлена!</h4>
+        <p class="modal-description">Cвяжусь с вами в самое ближайшее время!</p>
+        <button class="btn modal-success-btn modal-success-close">
+          Очень жду!
+        </button>
+      </div>
+    </div>
+
     <!-- HEADER -->
     <header class="header">
       <div class="container header-container">
@@ -597,16 +723,32 @@
           <h1 class="footer__heading footer__special-heading">@kovalev</h1>
           <ul class="footer__nav-list">
             <li class="footer__nav-wrapper">
-              <a href="./index.html#section-numbers" class="footer__link">Цифры</a>
-              <a href="./index.html#section-projects" class="footer__link">Проекты</a>
-              <a href="./index.html#section-tech" class="footer__link">Технологии</a>
-              <a href="./index.html#section-services" class="footer__link">Услуги</a>
+              <a href="./index.html#section-numbers" class="footer__link"
+                >Цифры</a
+              >
+              <a href="./index.html#section-projects" class="footer__link"
+                >Проекты</a
+              >
+              <a href="./index.html#section-tech" class="footer__link"
+                >Технологии</a
+              >
+              <a href="./index.html#section-services" class="footer__link"
+                >Услуги</a
+              >
             </li>
             <li class="footer__nav-wrapper">
-              <a href="./index.html#section-stages" class="footer__link">Этапы работ</a>
-              <a href="./index.html#section-faq" class="footer__link">Вопросы</a>
-              <a href="./index.html#section-contacts" class="footer__link">Контакты</a>
-              <a href="./index.html#section-order" class="footer__link">Оформить заказ</a>
+              <a href="./index.html#section-stages" class="footer__link"
+                >Этапы работ</a
+              >
+              <a href="./index.html#section-faq" class="footer__link"
+                >Вопросы</a
+              >
+              <a href="./index.html#section-contacts" class="footer__link"
+                >Контакты</a
+              >
+              <a href="./index.html#section-order" class="footer__link"
+                >Оформить заказ</a
+              >
             </li>
           </ul>
         </div>
@@ -622,7 +764,7 @@
             <p class="footer__link-description">
               с 9:00-20:00 - ежедневно (МСК)
             </p>
-            <a href="#" class="btn footer__btn">Заказать звонок</a>
+            <a href="./index.html#section-order" class="btn footer__btn">Заказать звонок</a>
             <ul class="footer__social-list">
               <a
                 href="https://t.me/x_kovalev"
@@ -677,6 +819,6 @@
       </div>
     </footer>
 
-    <script defer src="./main.js" type="text/javascript"></script>
+    <script defer src="./js/main.js" type="text/javascript"></script>
   </body>
 </html>
