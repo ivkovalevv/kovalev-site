@@ -978,6 +978,8 @@ html {
 @media (max-width: 525px) {
   .section-hero {
     background-image: url(./assets/img/hero-background-mob.png);
+    background-size: contain;
+    background-position: center center;
   }
   .section-hero__content {
     padding: 15px 0px 0px 0px;
