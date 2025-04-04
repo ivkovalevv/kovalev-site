@@ -696,6 +696,11 @@ html {
   width: 100%;
   height: 850px;
   padding-top: 100px;
+}
+
+.section-hero__background {
+  width: 100%;
+  height: 100%;
   background-image: url(./assets/img/hero-background.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -975,7 +980,7 @@ html {
 }
 
 @media (max-width: 525px) {
-  .section-hero {
+  .section-hero__background {
     background-image: url(./assets/img/hero-background-mob.png);
     background-size: 100%;
   }
