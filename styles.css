@@ -27,7 +27,7 @@ body {
 .overlay {
   width: 100%;
   height: 1000%;
-  position: absolute;
+  position: fixed;
   z-index: 5;
   background-color: #0000008b;
   backdrop-filter: blur(13.3px);
@@ -573,7 +573,7 @@ html {
 
 @media (max-width: 1460px) {
   .container {
-    width: 90%;
+    width: 93%;
   }
   .header__nav-item-btn,
   .btn-enter {
@@ -714,19 +714,6 @@ html {
   background-image: url(./assets/img/section-hero-image.png);
   background-size: cover;
   background-repeat: no-repeat;
-  animation: contentLeftEnter 0.5s ease 0s 1 normal;
-}
-
-@keyframes contentLeftEnter {
-  0% {
-    transform: translateX(-120px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0px);
-    opacity: 1;
-  }
 }
 
 .section-hero__heading {
@@ -748,19 +735,6 @@ html {
   flex-direction: column;
   padding: 50px 20px;
   margin-top: 150px;
-  animation: contentRightEnter 0.5s ease 0s 1 normal;
-}
-
-@keyframes contentRightEnter {
-  0% {
-    transform: translateX(120px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0px);
-    opacity: 1;
-  }
 }
 
 .section-hero__content-heading {
@@ -866,8 +840,8 @@ html {
 .section-hero__content-btn {
   width: 70%;
   margin-top: 45px;
-  padding: 18px 50px;
-  font-size: 16px;
+  padding: 15px 50px;
+  font-size: clamp(0.875rem, 0.8466rem + 0.1418vw, 1rem);
   position: relative;
   z-index: 1;
 }
@@ -1002,6 +976,9 @@ html {
 }
 
 @media (max-width: 525px) {
+  .section-hero {
+    background-image: url(./assets/img/hero-background-mob.png);
+  }
   .section-hero__content {
     padding: 15px 0px 0px 0px;
   }
@@ -1029,13 +1006,35 @@ html {
   }
 
   .section-hero__image {
-    top: 54%;
+    top: 50%;
   }
   .section-hero__heading {
     bottom: 40px;
   }
   .section-hero__content-btn {
-    margin-top: 420px;
+    margin-top: 430px;
+  }
+  .section-hero__content-heading,
+  .typing {
+    font-size: clamp(2.5rem, 2.3014rem + 0.9929vw, 3.375rem);
+    line-height: 35px;
+  }
+  .section-hero__content-heading-description {
+    width: 100%;
+    text-align: right;
+    color: #8f8f8f;
+    transform: translateY(12px);
+    line-height: 18px;
+  }
+  .heading-description-left {
+    width: 100%;
+    text-align: left;
+    color: #8f8f8f;
+  }
+  .heading-description-right {
+    width: 100%;
+    text-align: right;
+    color: #8f8f8f;
   }
 }
 
@@ -1044,23 +1043,12 @@ html {
     width: 390px;
     height: 390px;
   }
-
-  .typing {
-    font-size: 32px;
-  }
 }
 
 @media (max-width: 375px) {
   .section-hero__image {
     width: 375px;
     height: 375px;
-  }
-}
-
-@media (max-width: 367px) {
-  .section-hero__content-heading,
-  .typing {
-    font-size: clamp(1.75rem, 1.2961rem + 2.2695vw, 3.75rem);
   }
 }
 
@@ -1286,7 +1274,7 @@ html {
   position: relative;
   cursor: pointer;
   transition-duration: 0.2s;
-  font-size: clamp(0.5rem, 0.4433rem + 0.2837vw, 0.75rem);
+  font-size: 12px;
 }
 
 .arrow {
@@ -1349,7 +1337,7 @@ html {
   .section-projects__link {
     width: fit-content;
     text-align: center;
-    padding: 2px 7px;
+    padding: 12px 17px;
   }
   .arrow {
     display: none;
@@ -1536,13 +1524,12 @@ html {
 
 .services__item-btn-mob {
   background: transparent;
-  margin-left: 30px;
-  outline: 1px solid rgb(118, 84, 219);
+  margin-left: 10px;
   display: none;
   align-items: center;
   justify-content: center;
   padding: 10px;
-  margin-right: 10px;
+  box-shadow: none;
 }
 
 .services__item-btn-mob-icon {
@@ -1634,6 +1621,11 @@ html {
 
   .section-services__nav-item-active {
     background: rgb(118, 84, 219);
+    background: -webkit-linear-gradient(
+      left,
+      rgb(118, 84, 219),
+      rgb(63, 43, 128)
+    );
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(19.9px);
@@ -1649,7 +1641,7 @@ html {
   .section-services__nav-item {
     text-align: center;
     text-wrap: nowrap;
-    padding: 10px 25px;
+    padding: 8px 25px;
   }
 
   .section-services__nav-item:not(:last-child) {
@@ -1659,6 +1651,7 @@ html {
   .section-services__nav-list {
     width: 100%;
     overflow-y: scroll;
+    padding-bottom: 10px;
   }
 }
 
@@ -1920,6 +1913,7 @@ html {
 
 .section-stages__stage-heading-num {
   display: none;
+  transition: color 1s ease;
 }
 
 .section-stages__stage-description {
