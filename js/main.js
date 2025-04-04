@@ -175,7 +175,7 @@ function checkScrollStages() {
             document
               .querySelector(`[data-heading="${id}"]`)
               .classList.add("heading-active");
-              document
+            document
               .querySelector(`[data-num="${id}"]`)
               .classList.add("heading-active");
           } else {
@@ -198,7 +198,6 @@ window.addEventListener("scroll", function () {
 const typing1 = document.getElementById("typing-1");
 const typing2 = document.getElementById("typing-2");
 const typing3 = document.getElementById("typing-3");
-const typing4 = document.getElementById("typing-4");
 
 function AnimationTypyngHandler(typing, anothertyping) {
   typing.classList.remove("typing-active");
@@ -225,14 +224,7 @@ typing2.addEventListener(
 typing3.addEventListener(
   "animationend",
   () => {
-    AnimationTypyngHandler(typing3, typing4);
-  },
-  false
-);
-typing4.addEventListener(
-  "animationend",
-  () => {
-    AnimationTypyngHandler(typing4, typing1);
+    AnimationTypyngHandler(typing3, typing1);
   },
   false
 );
