@@ -851,7 +851,6 @@ html {
 @media (max-width: 1650px) {
   .section-hero {
     height: 800px;
-    background-size: contain;
   }
 
   .section-hero__image {
@@ -979,7 +978,6 @@ html {
   .section-hero {
     background-image: url(./assets/img/hero-background-mob.png);
     background-size: 100%;
-    background-position: center center;
   }
   .section-hero__content {
     padding: 15px 0px 0px 0px;
@@ -1253,7 +1251,7 @@ html {
   aspect-ratio: 1 / 0.6;
 }
 
-.section-projects__video-mob{
+.section-projects__video-mob {
   display: none;
 }
 
