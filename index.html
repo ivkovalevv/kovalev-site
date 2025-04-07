@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/img/logo.gif" />
     <link rel="stylesheet" href="./styles.css">
     <title>Разработка сайтов и веб-приложений!</title>
@@ -122,7 +122,7 @@
     <div class="header__block-active">
       <button class="btn header__nav-item-btn open-modal">Оформить заказ</button>
     </div> 
-    <button id="burger" class="btn-burger">
+    <button id="burger" class="btn-burger" aria-label="burger-button">
       <svg class="ham hamRotate ham4" viewBox="0 0 95 95" width="65" onclick="this.classList.toggle('active')">
         <path
           class="line top"
@@ -151,9 +151,9 @@
     <li id="burger-contacts" class="header__nav-item burger-menu-item">
       <a href="#section-contacts" class="header__nav-item-link">Контакты</a>
     </li>
-    <div class="burger__block-active">
+    <li class="burger__block-active">
       <button class="btn burger__nav-item-btn open-modal">Оформить заказ</button>
-    </div> 
+    </li> 
   </ul>
   </div>
 
@@ -691,7 +691,7 @@
         <summary class="section-process-summary">
           <div class="accordion__title-block" role="term" aria-details="faq-process-1">
             <p class="title accordion__title">Сколько времени займет создание сайта?</p>
-            <button class="accordion__title-button"></button>
+            <button class="accordion__title-button" aria-label="the open response button"></button>
           </div>
         </summary>
       </details>
@@ -707,7 +707,7 @@
         <summary class="section-process-summary">
           <div class="accordion__title-block" role="term" aria-details="faq-process-2">
             <p class="title accordion__title">Сколько стоит создание сайта?</p>
-            <button class="accordion__title-button"></button>
+            <button class="accordion__title-button" aria-label="the open response button"></button>
           </div>
         </summary>
       </details>
@@ -723,7 +723,7 @@
         <summary class="section-process-summary">
           <div class="accordion__title-block" role="term" aria-details="faq-process-3">
             <p class="title accordion__title">Вы делаете сайты под ключ?</p>
-            <button class="accordion__title-button"></button>
+            <button class="accordion__title-button" aria-label="the open response button"></button>
           </div>
         </summary>
       </details>
@@ -739,7 +739,7 @@
         <summary class="section-process-summary">
           <div class="accordion__title-block" role="term" aria-details="faq-process-4">
             <p class="title accordion__title">Какой функционал можно добавить на сайт?</p>
-            <button class="accordion__title-button"></button>
+            <button class="accordion__title-button" aria-label="the open response button"></button>
           </div>
         </summary>
       </details>
@@ -755,7 +755,7 @@
         <summary class="section-process-summary">
           <div class="accordion__title-block" role="term" aria-details="faq-process-5">
             <p class="title accordion__title">Вы делаете адаптивные сайты?</p>
-            <button class="accordion__title-button"></button>
+            <button class="accordion__title-button" aria-label="the open response button"></button>
           </div>
         </summary>
       </details>
@@ -771,7 +771,7 @@
         <summary class="section-process-summary">
           <div class="accordion__title-block" role="term" aria-details="faq-process-6">
             <p class="title accordion__title">Какие гарантии вы предоставляете?</p>
-            <button class="accordion__title-button"></button>
+            <button class="accordion__title-button" aria-label="the open response button"></button>
           </div>
         </summary>
       </details>
@@ -787,7 +787,7 @@
         <summary class="section-process-summary">
           <div class="accordion__title-block" role="term" aria-details="faq-process-7">
             <p class="title accordion__title">Что входит в стоимость создания сайта?</p>
-            <button class="accordion__title-button"></button>
+            <button class="accordion__title-button" aria-label="the open response button"></button>
           </div>
         </summary>
       </details>
@@ -803,7 +803,7 @@
         <summary class="section-process-summary">
           <div class="accordion__title-block" role="term" aria-details="faq-process-8">
             <p class="title accordion__title">Что делать, если мне не понравится дизайн?</p>
-            <button class="accordion__title-button"></button>
+            <button class="accordion__title-button" aria-label="the open response button"></button>
           </div>
         </summary>
       </details>
