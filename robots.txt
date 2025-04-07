@@ -1,2 +1,5 @@
+# robots.txt for https://kovalev-site.ru/ and friends
+
 User-agent: *
-Allow: https://kovalev-site.ru/
+Allow: /
+Disallow: /privacy.html
