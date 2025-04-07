@@ -3149,7 +3149,7 @@ details summary::-webkit-details-marker {
   height: 100%;
   font-size: clamp(1rem, 0.9574rem + 0.2128vw, 1.1875rem);
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
   background-color: #27282c;
   border-radius: 20px;
   user-select: none;
@@ -3231,7 +3231,7 @@ details summary::-webkit-details-marker {
   text-align: left;
   font-size: clamp(1rem, 0.9574rem + 0.2128vw, 1.1875rem);
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
   transition: color 0.3s ease;
 }
 
