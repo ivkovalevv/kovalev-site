@@ -1,24 +1,2 @@
-Sitemap: https://tennisopenclub.ru/
-User-agent: YandexBot
-Allow: https://tennisopenclub.ru/
-
-User-agent: DuckDuckBot
-Allow: https://tennisopenclub.ru/
-
-User-agent: Pinterestbot
-Allow: https://tennisopenclub.ru/
-
-User-agent: LinkedInBot
-Allow: https://tennisopenclub.ru/
-
-User-agent: facebookexternalhit
-Allow: https://tennisopenclub.ru/
-
-User-agent: Googlebot-Mobile
-Allow: https://tennisopenclub.ru/
-
-User-agent: Googlebot-Image
-Allow: https://tennisopenclub.ru/
-
-User-agent: Googlebot
-Allow: https://tennisopenclub.ru/
+User-agent: *
+Allow: https://kovalev-site.ru/
