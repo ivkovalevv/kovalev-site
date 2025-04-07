@@ -3439,7 +3439,7 @@ details summary::-webkit-details-marker {
   transition: transform 0.2s ease;
 }
 
-.footer__social-link:not(:last-child) {
+.footer__social-list li:not(:last-child) {
   margin-right: 15px;
 }
 
