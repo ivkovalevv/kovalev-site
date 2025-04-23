@@ -718,6 +718,10 @@ html {
   margin: 20px 0px 0px 0px;
 }
 
+.hero__image-mob{
+  display: none;
+}
+
 .section-hero__heading {
   position: absolute;
   bottom: -130px;
@@ -1009,6 +1013,12 @@ html {
 
   .section-hero__image {
     top: 50%;
+  }
+  .hero__image-desk{
+    display: none;
+  }
+  .hero__image-mob{
+    display: inline-block;
   }
   .section-hero__heading {
     bottom: 40px;
