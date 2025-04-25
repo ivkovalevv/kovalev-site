@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
   orderBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
-    let message = `<b>Заявка с сайта: </b> kovalevsite.ru\n`;
+    let message = `<b>Заявка с сайта: </b> kovalev-site.ru\n`;
     message += `(из блока оформления заказа)\n`;
     message += `\n`;
     message += `<b>Имя: </b> ${formName.value}\n`;
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
   orderBtnModal.addEventListener("click", function (e) {
     e.preventDefault();
 
-    let message = `<b>Заявка с сайта: </b> kovalevsite.ru\n`;
+    let message = `<b>Заявка с сайта: </b> kovalev-site.ru\n`;
     message += `(из модальной формы)\n`;
     message += `\n`;
     message += `<b>Имя: </b> ${formNameModal.value}\n`;
