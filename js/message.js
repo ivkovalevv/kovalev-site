@@ -118,17 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const { TOKEN, CHAT_ID } = doc.data();
         console.log("Конфиг загружен: ", TOKEN, CHAT_ID);
         
-        // Используйте переменные в вашем коде
-        window.TELEGRAM_CONFIG = { TOKEN, CHAT_ID };
-      }
-    } catch (error) {
-      console.error("Ошибка загрузки конфига:", error);
-    }
-  };
-
-  loadConfig();
-  
-  const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+        const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
   orderBtn.addEventListener("click", function (e) {
     e.preventDefault();
@@ -193,6 +183,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
   });
+      }
+    } catch (error) {
+      console.error("Ошибка загрузки конфига:", error);
+    }
+  };
+
+  loadConfig();
+  
+  
 
   /* Message modal */
 
