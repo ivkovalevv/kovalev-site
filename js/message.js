@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadConfig();
 
-  const config = await loadConfig();
+  const config = loadConfig();
   const URI_API = `https://api.telegram.org/bot${config.TOKEN}/sendMessage`;
 
         orderBtn.addEventListener("click", function (e) {
