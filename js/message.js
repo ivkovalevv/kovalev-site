@@ -1,3 +1,5 @@
+import { TOKEN, CHAT_ID } from '../config';
+
 document.addEventListener("DOMContentLoaded", () => {
   /* INPUT TEL MASK */
 
@@ -98,10 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* Site - TG */
-  require('dotenv').config()
-
-  const TOKEN = process.env.TOKEN;
-  const CHAT_ID = process.env.CHAT_ID;
   const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
   orderBtn.addEventListener("click", function (e) {
