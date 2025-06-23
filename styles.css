@@ -1546,6 +1546,7 @@ html {
   justify-content: center;
   padding: 10px;
   box-shadow: none;
+  border: none;
 }
 
 .services__item-btn-mob-icon {
