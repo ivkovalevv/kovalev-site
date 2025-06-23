@@ -122,10 +122,8 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // Используйте переменные в вашем коде
         window.TELEGRAM_CONFIG = { TOKEN, CHAT_ID };
-        return (
-          TOKEN = TOKEN,
-          CHAT_ID = CHAT_ID
-        )
+        TOKEN = TOKEN,
+        CHAT_ID = CHAT_ID
       }
     } catch (error) {
       console.error("Ошибка загрузки конфига:", error);
@@ -133,6 +131,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   loadConfig();
+
+  console.log(TOKEN, CHAT_ID)
 
   
   const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
