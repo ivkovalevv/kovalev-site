@@ -176,12 +176,8 @@ html {
   position: absolute;
   top: -8px;
   right: 0;
-  width: clamp(1.75rem, 1.6933rem + 0.2837vw, 2rem);
-  height: clamp(1.75rem, 1.6933rem + 0.2837vw, 2rem);
-  background-image: url(./assets/img/close-modal.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
+  width: fit-content;
+  height: fit-content;
   cursor: pointer;
 }
 
