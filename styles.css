@@ -1426,6 +1426,7 @@ html {
 }
 
 .section-services__nav-list {
+  min-width: 1048px;
   margin-top: 50px;
   margin-left: 50px;
   list-style: none;
@@ -1664,6 +1665,7 @@ html {
   }
 
   .section-services__nav-list {
+    min-width: 100%;
     width: 100%;
     overflow-y: scroll;
     padding-bottom: 10px;
