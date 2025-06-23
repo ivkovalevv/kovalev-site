@@ -1,4 +1,4 @@
-import { TOKEN, CHAT_ID } from '../config';
+import { TOKEN, CHAT_ID } from '../config.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   /* INPUT TEL MASK */
