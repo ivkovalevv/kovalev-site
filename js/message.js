@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Используйте переменные в вашем коде
         window.TELEGRAM_CONFIG = { TOKEN, CHAT_ID };
         return (
-          TOKEN = TOKEN;
+          TOKEN = TOKEN,
           CHAT_ID = CHAT_ID
         )
       }
