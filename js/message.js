@@ -98,11 +98,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* Site - TG */
-  // Конфиг вашего проекта Firebase
+  
+  /* // Конфиг проекта Firebase
   const firebaseConfig = {
     apiKey: "AIzaSyD...",
     projectId: "site-tg-message-config",
-    // Остальные параметры из консоли Firebase
   };
 
   // Инициализация
@@ -124,11 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  loadConfig();
+  loadConfig(); */
 
-  const config = loadConfig();
-  console.log(config.then());
-  const URI_API = `https://api.telegram.org/bot${config.TOKEN}/sendMessage`;
+  const TOKEN = "6661183670:AAH8AGqYqFUdC8IuupScDV-DALlzL-gdPBg";
+  const CHAT_ID = "-1002032429351";
+  const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
         orderBtn.addEventListener("click", function (e) {
           e.preventDefault();
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ) {
             axios
               .post(URI_API, {
-                chat_id: config.CHAT_ID,
+                chat_id: CHAT_ID,
                 parse_mode: "html",
                 text: message,
               })
@@ -291,7 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       axios
         .post(URI_API, {
-          chat_id: config.CHAT_ID,
+          chat_id: CHAT_ID,
           parse_mode: "html",
           text: message,
         })
