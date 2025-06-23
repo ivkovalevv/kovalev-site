@@ -842,8 +842,8 @@ html {
 .section-hero__content-btn {
   width: 70%;
   margin-top: 45px;
-  padding: 15px 50px;
-  font-size: clamp(0.875rem, 0.8466rem + 0.1418vw, 1rem);
+  padding: 20px 50px;
+  font-size: 16px;
   position: relative;
   z-index: 1;
 }
