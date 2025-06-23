@@ -985,7 +985,7 @@
   // Получаем конфиг из Firestore
   const loadConfig = async () => {
     try {
-      const doc = await db.collection("tg-config").doc("ваш-doc-id").get();
+      const doc = await db.collection("tg-config").doc("data").get();
       if (doc.exists) {
         const { TOKEN, CHAT_ID } = doc.data();
         console.log("Конфиг загружен:", TOKEN, CHAT_ID);
