@@ -1,5 +1,6 @@
+import { TOKEN, CHAT_ID } from '../config.js';
+
 document.addEventListener("DOMContentLoaded", () => {
-  import { TOKEN, CHAT_ID } from '../config.js';
   /* INPUT TEL MASK */
 
   [].forEach.call(document.querySelectorAll(".tel"), function (input) {
