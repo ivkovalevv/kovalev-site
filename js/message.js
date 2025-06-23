@@ -117,12 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (doc.exists) {
         const { TOKEN, CHAT_ID } = doc.data();
         console.log("Конфиг загружен: ", TOKEN, CHAT_ID);
-        
-        return ( TOKEN, CHAT_ID)
       }
     } catch (error) {
       console.error("Ошибка загрузки конфига:", error);
     }
+
+    return ( TOKEN, CHAT_ID);
   };
 
   loadConfig();
