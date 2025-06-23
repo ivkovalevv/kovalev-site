@@ -116,19 +116,18 @@ document.addEventListener("DOMContentLoaded", () => {
       const doc = await db.collection("tg-config").doc("data").get();
       if (doc.exists) {
         const { TOKEN, CHAT_ID } = doc.data();
-        console.log("Конфиг загружен: ", TOKEN, CHAT_ID);
+        console.log("Конфиг загружен");
+        return ( TOKEN, CHAT_ID);
       }
     } catch (error) {
       console.error("Ошибка загрузки конфига:", error);
     }
-
-    return ( TOKEN, CHAT_ID);
   };
 
   loadConfig();
 
-
-  const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+  const config = await loadConfig();
+  const URI_API = `https://api.telegram.org/bot${config.TOKEN}/sendMessage`;
 
         orderBtn.addEventListener("click", function (e) {
           e.preventDefault();
@@ -171,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ) {
             axios
               .post(URI_API, {
-                chat_id: CHAT_ID,
+                chat_id: config.CHAT_ID,
                 parse_mode: "html",
                 text: message,
               })
@@ -291,7 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       axios
         .post(URI_API, {
-          chat_id: CHAT_ID,
+          chat_id: config.CHAT_ID,
           parse_mode: "html",
           text: message,
         })
