@@ -98,8 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* Site - TG */
-  const TOKEN = "6661183670:AAH8AGqYqFUdC8IuupScDV-DALlzL-gdPBg";
-  const CHAT_ID = "-1002032429351";
+  const TOKEN = process.env.TOKEN;
+  const CHAT_ID = process.env.CHAT_ID;
   const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
   orderBtn.addEventListener("click", function (e) {
