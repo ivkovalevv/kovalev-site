@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  async function sendFormMessage() {
+  async function sendMessage(inputName, inputPhone, inputProject) {
     let TOKEN, CHAT_ID;
 
     try {
@@ -137,11 +137,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
       let message = `<b>Заявка с сайта: </b> kovalev-site.ru\n`;
-      message += `(из блока оформления заказа)\n`;
       message += `\n`;
-      message += `<b>Имя: </b> ${formName.value}\n`;
-      message += `<b>Номер телефона: </b> ${formPhone.value}\n`;
-      message += `<b>Работа: </b> ${formProject.value}`;
+      message += `<b>Имя: </b> ${inputName.value}\n`;
+      message += `<b>Номер телефона: </b> ${inputPhone.value}\n`;
+      message += `<b>Работа: </b> ${inputProject.value}`;
 
       axios
         .post(URI_API, {
@@ -150,12 +149,12 @@ document.addEventListener("DOMContentLoaded", () => {
           text: message,
         })
         .then((res) => {
-          formName.value = "";
-          formName.classList.remove("input-invalide");
-          formPhone.value = "";
-          formPhone.classList.remove("input-invalide");
-          formProject.value = "";
-          formProject.classList.remove("input-invalide");
+          inputName.value = "";
+          inputName.classList.remove("input-invalide");
+          inputPhone.value = "";
+          inputPhone.classList.remove("input-invalide");
+          inputProject.value = "";
+          inputProject.classList.remove("input-invalide");
 
           ShowModalSuccess();
         })
@@ -205,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
       formPhone.value.length === 18 &&
       checkPrivacy.checked
     ) {
-      sendFormMessage();
+      sendMessage(formName, formPhone, formProject);
     }
   });
 
@@ -267,13 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
   orderBtnModal.addEventListener("click", function (e) {
     e.preventDefault();
 
-    let message = `<b>Заявка с сайта: </b> kovalev-site.ru\n`;
-    message += `(из модальной формы)\n`;
-    message += `\n`;
-    message += `<b>Имя: </b> ${formNameModal.value}\n`;
-    message += `<b>Номер телефона: </b> ${formPhoneModal.value}\n`;
-    message += `<b>Работа: </b> ${formProjectModal.value}`;
-
     if (formNameModal.value == "") {
       formNameModal.classList.add("input-invalide");
       invalidMessageNameModal.classList.add("invalid-message-active");
@@ -303,29 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
       formPhoneModal.value.length === 18 &&
       checkPrivacyModal.checked
     ) {
-      axios
-        .post(URI_API, {
-          chat_id: CHAT_ID,
-          parse_mode: "html",
-          text: message,
-        })
-        .then((res) => {
-          formNameModal.value = "";
-          formNameModal.classList.remove("input-invalide");
-          formPhoneModal.value = "";
-          formPhoneModal.classList.remove("input-invalide");
-          formProjectModal.value = "";
-          formProjectModal.classList.remove("input-invalide");
-
-          modalOrder.classList.remove("modal-active");
-          ShowModalSuccess();
-        })
-        .catch((err) => {
-          console.warn(err);
-        })
-        .finally(() => {
-          console.log("Message sent");
-        });
+      sendMessage(formNameModal, formPhoneModal, formProjectModal);
     }
   });
 });
