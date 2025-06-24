@@ -143,58 +143,28 @@ document.addEventListener("DOMContentLoaded", () => {
       message += `<b>Номер телефона: </b> ${formPhone.value}\n`;
       message += `<b>Работа: </b> ${formProject.value}`;
 
-      if (formName.value == "") {
-        formName.classList.add("input-invalide");
-        invalidMessageName.classList.add("invalid-message-active");
-      }
-      if (formPhone.value == "") {
-        formPhone.classList.add("input-invalide");
-        invalidMessageTel.classList.add("invalid-message-active");
-      }
-      if (formPhone.value !== "" && formPhone.value.length < 18) {
-        formPhone.classList.add("input-invalide");
-        invalidMessageTel.textContent = "Введите полный номер телефона";
-        invalidMessageTel.classList.add("invalid-message-active");
-      }
-      if (formProject.value == "") {
-        formProject.classList.add("input-invalide");
-        invalidMessageProject.classList.add("invalid-message-active");
-      }
-      if (!checkPrivacy.checked) {
-        document
-          .querySelector(".checkbox-box")
-          .classList.add("checkbox-invalide");
-        invalidMessageСheckbox.classList.add("invalid-message-active");
-      } else if (
-        formName.value !== "" &&
-        formPhone.value !== "" &&
-        formProject.value !== "" &&
-        formPhone.value.length === 18 &&
-        checkPrivacy.checked
-      ) {
-        axios
-          .post(URI_API, {
-            chat_id: CHAT_ID,
-            parse_mode: "html",
-            text: message,
-          })
-          .then((res) => {
-            formName.value = "";
-            formName.classList.remove("input-invalide");
-            formPhone.value = "";
-            formPhone.classList.remove("input-invalide");
-            formProject.value = "";
-            formProject.classList.remove("input-invalide");
+      axios
+        .post(URI_API, {
+          chat_id: CHAT_ID,
+          parse_mode: "html",
+          text: message,
+        })
+        .then((res) => {
+          formName.value = "";
+          formName.classList.remove("input-invalide");
+          formPhone.value = "";
+          formPhone.classList.remove("input-invalide");
+          formProject.value = "";
+          formProject.classList.remove("input-invalide");
 
-            ShowModalSuccess();
-          })
-          .catch((err) => {
-            console.warn(err);
-          })
-          .finally(() => {
-            console.log("Message sent");
-          });
-      }
+          ShowModalSuccess();
+        })
+        .catch((err) => {
+          console.warn(err);
+        })
+        .finally(() => {
+          console.log("Message sent");
+        });
     } catch (err) {
       console.error("Не удалось загрузить конфиг:", err);
     }
@@ -206,7 +176,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   orderBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    sendFormMessage();
+    if (formName.value == "") {
+      formName.classList.add("input-invalide");
+      invalidMessageName.classList.add("invalid-message-active");
+    }
+    if (formPhone.value == "") {
+      formPhone.classList.add("input-invalide");
+      invalidMessageTel.classList.add("invalid-message-active");
+    }
+    if (formPhone.value !== "" && formPhone.value.length < 18) {
+      formPhone.classList.add("input-invalide");
+      invalidMessageTel.textContent = "Введите полный номер телефона";
+      invalidMessageTel.classList.add("invalid-message-active");
+    }
+    if (formProject.value == "") {
+      formProject.classList.add("input-invalide");
+      invalidMessageProject.classList.add("invalid-message-active");
+    }
+    if (!checkPrivacy.checked) {
+      document
+        .querySelector(".checkbox-box")
+        .classList.add("checkbox-invalide");
+      invalidMessageСheckbox.classList.add("invalid-message-active");
+    } else if (
+      formName.value !== "" &&
+      formPhone.value !== "" &&
+      formProject.value !== "" &&
+      formPhone.value.length === 18 &&
+      checkPrivacy.checked
+    ) {
+      sendFormMessage();
+    }
   });
 
   /* Message modal */
