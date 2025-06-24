@@ -98,8 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* Site - TG */
-  
-  /* // Конфиг проекта Firebase
+
+  // Конфиг проекта Firebase
   const firebaseConfig = {
     apiKey: "AIzaSyD...",
     projectId: "site-tg-message-config",
@@ -110,90 +110,104 @@ document.addEventListener("DOMContentLoaded", () => {
   const db = firebase.firestore();
 
   // Получаем конфиг из Firestore
-  
   const loadConfig = async () => {
     try {
       const doc = await db.collection("tg-config").doc("data").get();
       if (doc.exists) {
         const { TOKEN, CHAT_ID } = doc.data();
         console.log("Конфиг загружен");
-        return ( TOKEN, CHAT_ID);
+        return { TOKEN, CHAT_ID }; // Возвращаем объект
+      } else {
+        throw new Error("Документ 'tg-config/data' не найден");
       }
     } catch (error) {
       console.error("Ошибка загрузки конфига:", error);
+      throw error; // Пробрасываем ошибку для обработки в вызывающем коде
     }
   };
 
-  loadConfig(); */
+  async function sendFormMessage() {
+    let TOKEN, CHAT_ID;
+
+    try {
+      const config = await loadConfig();
+
+      TOKEN = config.TOKEN;
+      CHAT_ID = config.CHAT_ID;
+      const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+
+      let message = `<b>Заявка с сайта: </b> kovalev-site.ru\n`;
+      message += `(из блока оформления заказа)\n`;
+      message += `\n`;
+      message += `<b>Имя: </b> ${formName.value}\n`;
+      message += `<b>Номер телефона: </b> ${formPhone.value}\n`;
+      message += `<b>Работа: </b> ${formProject.value}`;
+
+      if (formName.value == "") {
+        formName.classList.add("input-invalide");
+        invalidMessageName.classList.add("invalid-message-active");
+      }
+      if (formPhone.value == "") {
+        formPhone.classList.add("input-invalide");
+        invalidMessageTel.classList.add("invalid-message-active");
+      }
+      if (formPhone.value !== "" && formPhone.value.length < 18) {
+        formPhone.classList.add("input-invalide");
+        invalidMessageTel.textContent = "Введите полный номер телефона";
+        invalidMessageTel.classList.add("invalid-message-active");
+      }
+      if (formProject.value == "") {
+        formProject.classList.add("input-invalide");
+        invalidMessageProject.classList.add("invalid-message-active");
+      }
+      if (!checkPrivacy.checked) {
+        document
+          .querySelector(".checkbox-box")
+          .classList.add("checkbox-invalide");
+        invalidMessageСheckbox.classList.add("invalid-message-active");
+      } else if (
+        formName.value !== "" &&
+        formPhone.value !== "" &&
+        formProject.value !== "" &&
+        formPhone.value.length === 18 &&
+        checkPrivacy.checked
+      ) {
+        axios
+          .post(URI_API, {
+            chat_id: CHAT_ID,
+            parse_mode: "html",
+            text: message,
+          })
+          .then((res) => {
+            formName.value = "";
+            formName.classList.remove("input-invalide");
+            formPhone.value = "";
+            formPhone.classList.remove("input-invalide");
+            formProject.value = "";
+            formProject.classList.remove("input-invalide");
+
+            ShowModalSuccess();
+          })
+          .catch((err) => {
+            console.warn(err);
+          })
+          .finally(() => {
+            console.log("Message sent");
+          });
+      }
+    } catch (err) {
+      console.error("Не удалось загрузить конфиг:", err);
+    }
+  }
 
   const TOKEN = "6661183670:AAH8AGqYqFUdC8IuupScDV-DALlzL-gdPBg";
   const CHAT_ID = "-1002032429351";
   const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
-        orderBtn.addEventListener("click", function (e) {
-          e.preventDefault();
-      
-          let message = `<b>Заявка с сайта: </b> kovalev-site.ru\n`;
-          message += `(из блока оформления заказа)\n`;
-          message += `\n`;
-          message += `<b>Имя: </b> ${formName.value}\n`;
-          message += `<b>Номер телефона: </b> ${formPhone.value}\n`;
-          message += `<b>Работа: </b> ${formProject.value}`;
-      
-          if (formName.value == "") {
-            formName.classList.add("input-invalide");
-            invalidMessageName.classList.add("invalid-message-active");
-          }
-          if (formPhone.value == "") {
-            formPhone.classList.add("input-invalide");
-            invalidMessageTel.classList.add("invalid-message-active");
-          }
-          if (formPhone.value !== "" && formPhone.value.length < 18) {
-            formPhone.classList.add("input-invalide");
-            invalidMessageTel.textContent = "Введите полный номер телефона";
-            invalidMessageTel.classList.add("invalid-message-active");
-          }
-          if (formProject.value == "") {
-            formProject.classList.add("input-invalide");
-            invalidMessageProject.classList.add("invalid-message-active");
-          }
-          if (!checkPrivacy.checked) {
-            document
-              .querySelector(".checkbox-box")
-              .classList.add("checkbox-invalide");
-            invalidMessageСheckbox.classList.add("invalid-message-active");
-          } else if (
-            formName.value !== "" &&
-            formPhone.value !== "" &&
-            formProject.value !== "" &&
-            formPhone.value.length === 18 &&
-            checkPrivacy.checked
-          ) {
-            axios
-              .post(URI_API, {
-                chat_id: CHAT_ID,
-                parse_mode: "html",
-                text: message,
-              })
-              .then((res) => {
-                formName.value = "";
-                formName.classList.remove("input-invalide");
-                formPhone.value = "";
-                formPhone.classList.remove("input-invalide");
-                formProject.value = "";
-                formProject.classList.remove("input-invalide");
-      
-                ShowModalSuccess();
-              })
-              .catch((err) => {
-                console.warn(err);
-              })
-              .finally(() => {
-                console.log("Message sent");
-              });
-          }
-        });
-  
+  orderBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    sendFormMessage();
+  });
 
   /* Message modal */
 
