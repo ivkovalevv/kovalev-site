@@ -164,6 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .finally(() => {
           console.log("Message sent");
         });
+
+      modal.classList.remove("modal-active");
     } catch (err) {
       console.error("Не удалось загрузить конфиг:", err);
     }
