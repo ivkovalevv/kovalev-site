@@ -3,7 +3,7 @@
 [![Сайт](https://img.shields.io/badge/-Мой_сайт-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://kovalev-site.ru/)
 [![Исходный код](https://img.shields.io/badge/-КОД-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ivkovalevv/portfolio)
 
-Современный сайт freelance frontend-разработчика с акцентом на UX/UI
+Современный сайт freelance frontend-разработчика
 
 ### 🌟 Особенности
 - Анимации и плавные переходы
